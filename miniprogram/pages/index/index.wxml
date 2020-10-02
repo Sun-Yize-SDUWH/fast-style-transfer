@@ -55,5 +55,10 @@
     </navigator>
   </view>
 
+  <view class="uploader">
+    <navigator url="../main/main" open-type="navigate" class="uploader-text">
+      <text>AI画家功能测试入口</text>
+    </navigator>
+  </view>
 
 </view>

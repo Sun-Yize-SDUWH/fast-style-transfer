@@ -1,0 +1,49 @@
+<!--pages/main/main.wxml-->
+<van-tabs swipeable animated>
+  <van-tab title="标签 1">
+    <van-image
+      round
+      width="16rem"
+      height="16rem"
+      src="https://img.yzcdn.cn/vant/cat.jpeg"
+    />
+  </van-tab>
+    <van-tab title="标签 2">
+    <van-image
+      round
+      width="10rem"
+      height="10rem"
+      src="https://img.yzcdn.cn/vant/cat.jpeg"
+    />
+  </van-tab>
+    <van-tab title="标签 3">
+    <van-image
+      round
+      width="10rem"
+      height="10rem"
+      src="https://img.yzcdn.cn/vant/cat.jpeg"
+    />
+  </van-tab>
+    <van-tab title="标签 4">
+    <van-image
+      round
+      width="10rem"
+      height="10rem"
+      src="https://img.yzcdn.cn/vant/cat.jpeg"
+    />
+  </van-tab>
+    <van-tab title="标签 5">
+    <van-image
+      round
+      width="10rem"
+      height="10rem"
+      src="https://img.yzcdn.cn/vant/cat.jpeg"
+    />
+  </van-tab>
+</van-tabs>
+
+<van-slider value="{{ currentValue }}" use-button-slot bind:drag="onDrag">
+  <view class="custom-button" slot="button">
+    {{ currentValue }}/100
+  </view>
+</van-slider>
