@@ -1,5 +1,5 @@
 /* miniprogram/pages/mine/mine.wxss */
-.page{
+.page {
   background-color: hsla(303, 68%, 36%, 0.123);
 }
 
@@ -15,6 +15,7 @@
   display: inline-block;
   vertical-align: middle
 }
+
 .weui-loadmore_line {
   border-top: 1px solid #e5e5e5;
   margin-top: 2.4em
@@ -27,6 +28,7 @@
   background-color: #fff;
   color: #999
 }
+
 .weui-loadmore__tips_in-dot {
   position: relative;
   padding: 0 .16em;
@@ -46,10 +48,12 @@
   border-radius: 50%;
   background-color: #e5e5e5
 }
+
 .container {
   padding: 10px 0px;
   background-color: #F2f2f2;
 }
+
 .weui-cell {
   padding: 10px 15px;
   position: relative;
@@ -60,11 +64,13 @@
   -webkit-align-items: center;
   align-items: center
 }
+
 .weui-cell__bd {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   flex: 1
 }
+
 .weui-badge {
   display: inline-block;
   padding: .15em .4em;
@@ -77,19 +83,21 @@
   font-size: 12px;
   vertical-align: middle
 }
+
 .userinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;
 }
-.u
-.page__bd {
+
+.u .page__bd {
   margin-top: 30rpx;
 }
 
