@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/test1/test1",
+    "pages/share/share",
     "pages/main/main",
     "pages/index/index",
     "pages/test/test"
@@ -8,9 +9,9 @@
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#1E407F",
     "navigationBarTitleText": "AI画家",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",

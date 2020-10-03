@@ -8,30 +8,18 @@ Page({
    */
   data: {
     proUrl: "/images/1.png",
+    changeStyle: false,
     choose: false,
     show: false,
     showShare: false,
     options: [
       { name: '微信', icon: 'wechat', openType: 'share' },
-      { name: '微博', icon: 'weibo' },
-      { name: '复制链接', icon: 'link' },
+      { name: 'QQ', icon: 'qq' },
+      { name: '保存图片', icon: '/images/img1.png' },
       { name: '分享海报', icon: 'poster' },
     ],
   },
-
-
-  onClick(event) {
-    this.setData({ showShare: true });
-  },
-
-  onClose() {
-    this.setData({ showShare: false });
-  },
-
-  onSelect(event) {
-    Toast(event.detail.name);
-    this.onClose();
-  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -120,6 +108,9 @@ Page({
       wx.showLoading({
         title: '生成图片中...',
       })
+      _this.setData({
+        changeStyle: true,
+      })
       wx.uploadFile({
         url: 'https://experimentforzcl.cn:8080',
         filePath: _this.data.tempimg,
@@ -132,7 +123,8 @@ Page({
           if(res.statusCode==200){
             wx.hideLoading()
             _this.setData({
-              proUrl: "data:image/png;base64," + res.data
+              proUrl: "data:image/png;base64," + res.data,
+              changeStyle: false,
             })
             wx.hideLoading(),
             Notify({
@@ -150,17 +142,65 @@ Page({
     this.setData({
       original_color: res.detail/100
     })
+    wx.showToast({
+      icon: 'none',
+      title: `颜色保留：${res.detail}%`,
+    });
   },
 
   styleChange: function(res) {
     this.setData({
       blend_alpha: res.detail/100
     })
+    wx.showToast({
+      icon: 'none',
+      title: `风格占比：${res.detail}%`,
+    });
   },
 
   gotoShare: function() {
     this.setData({
       showShare: true,
     })
-  }
+  },
+
+  shareSelect(res) {
+    var _this = this
+    if(res.detail.index==2){
+      var number = Math.random();
+      wx.getFileSystemManager().writeFile({
+        filePath: wx.env.USER_DATA_PATH + '/pic' + number + '.png',
+        data: _this.data.proUrl.slice(22),
+        encoding: 'base64',
+        success: res => {
+          wx.saveImageToPhotosAlbum({
+            filePath: wx.env.USER_DATA_PATH + '/pic' + number + '.png',
+            success: function (res) {
+              wx.showToast({
+                title: '保存成功!',
+                icon: "none"
+              })
+            },
+            fail: function (err) {
+              wx.showToast({
+                title: '保存失败',
+                icon: "none"
+              })
+            }
+          })
+        },
+      })
+    }else if(res.detail.index==3){
+      wx.navigateTo({
+        url: '/pages/share/share',
+      })
+    }
+    this.shareClose();
+  },
+
+  shareClose() {
+    this.setData({
+      showShare: false
+    });
+  },
 })

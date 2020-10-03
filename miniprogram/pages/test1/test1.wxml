@@ -5,31 +5,30 @@
 <text class="titleChoose">颜色保留</text>
 <view class="valueChoose">
   <text>10%</text>
-  <van-slider value="50" min="10" max="90" active-color="#ED7300" bind:change="changeColor" />
+  <van-slider disabled="{{changeStyle}}" value="50" min="10" max="90" active-color="#ED7300" bind:change="changeColor" />
   <text>90%</text>
 </view>
 
 <text class="titleChoose">风格占比</text>
 <view class="valueChoose">
   <text>10%</text>
-  <van-slider value="50" min="10" max="90" bind:change="styleChange" />
+  <van-slider disabled="{{changeStyle}}" value="50" min="10" max="90" bind:change="styleChange" />
   <text>90%</text>
 </view>
 
 <view class="chooseBtn">
-  <van-button round type="primary" size="normal" class="upload" bindtap="chooseimg">选择照片</van-button>
-  <van-button round type="primary" size="normal" class="upload" bindtap="generate">生成图片</van-button>
+  <van-button round disabled="{{changeStyle}}" type="primary" size="normal" class="upload" bindtap="chooseimg">选择照片</van-button>
+  <van-button round disabled="{{changeStyle}}" type="primary" size="normal"  class="upload" bindtap="generate">生成图片</van-button>
 </view>
 
-<view class="share" bindtap="gotoShare">
+<view class="share" disabled="{{changeStyle}}" bindtap="gotoShare">
   <text>点击分享</text>
 </view>
 
-<van-cell title="显示分享面板" bind:click="onClick" />
 <van-share-sheet
-  show="{{ showShare }}"
+  show="{{showShare}}"
   title="立即分享给好友"
   options="{{options}}"
-  bind:select="onSelect"
-  bind:close="onClose"
+  bind:select="shareSelect"
+  bind:close="shareClose"
 />
