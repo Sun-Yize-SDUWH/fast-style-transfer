@@ -93,30 +93,11 @@ Page({
       two_five: "animated fadeOut"
     })
   },
-  onLoad: function () {
-    var e = this,
-      n = this.data.view;
-    var a = t.changedTouches[0].clientX - this.data.startX;
-    if (a < -100) {
-      if (this.data.currentIndex >= 1) return;
-      this.setData({
-        oldIndex: e.data.currentIndex,
-        currentIndex: ++e.data.currentIndex
-      }), n[this.data.oldIndex].out = "animated fadeOutLeft", n[this.data.oldIndex].in = "", n[this.data.currentIndex].in = "animated fadeInRight", n[this.data.currentIndex].out = "", this.setData({
-        view: n
-      }), this.cleanAnimated(), this.showAnimated()
-    } else if (a > 100) {
-      if (this.data.currentIndex <= 0) return;
-      this.setData({
-        oldIndex: e.data.currentIndex,
-        currentIndex: --e.data.currentIndex
-      }), n[this.data.oldIndex].out = "animated fadeOutRight", n[this.data.oldIndex].in = "", n[this.data.currentIndex].in = "animated fadeInLeft", n[this.data.currentIndex].out = "", this.setData({
-        view: n
-      }), this.cleanAnimated(), this.showAnimated()
-    }
+  onLoad: function (t) {
+   
   },
   onReady: function () {},
-  onShow: function () {
+  onShow: function (t) {
     
     this.showAnimated();
     var t = this;
@@ -167,9 +148,19 @@ Page({
       bottom_four: ""
     })
   },
-  hello:function(){
+  navigate1:function(){
     wx.navigateTo({
-      url: '../main/main',
+      url: '../mine/mine',
+    })
+  },
+  navigate2:function(){
+    wx.navigateTo({
+      url: '../mine/mine',
+    })
+  },
+  navigate3:function(){
+    wx.navigateTo({
+      url: '../mine/mine',
     })
   },
   onUnload: function () {},
