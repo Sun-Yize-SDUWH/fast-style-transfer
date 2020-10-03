@@ -1,64 +1,29 @@
-<!--index.wxml-->
-<view class="container">
-
-  <!-- 用户 openid -->
-  <view class="userinfo">
-    <button 
-      open-type="getUserInfo" 
-      bindgetuserinfo="onGetUserInfo"
-      class="userinfo-avatar"
-      style="background-image: url({{avatarUrl}})"
-      size="default"
-    ></button>
-    <view class="userinfo-nickname-wrapper">
-      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
-    </view>
-  </view>
-
-
-  <!-- 上传图片 -->
-  <view class="uploader">
-    <view class="uploader-text" bindtap="doUpload">
-      <text>上传图片</text>
-    </view>
-    <view class="uploader-container" wx:if="{{imgUrl}}">
-      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
-    </view>
-  </view>
-
-
-  <!-- 操作数据库 -->
-  <view class="uploader">
-    <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
-      <text>前端操作数据库</text>
-    </navigator>
-  </view>
-
-  <!-- 即时通信 -->
-  <view class="uploader">
-    <navigator url="../im/im" open-type="navigate" class="uploader-text">
-      <text>即时通信 Demo</text>
-    </navigator>
-  </view>
-
-  <!-- 新建云函数 -->
-  <view class="uploader">
-    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
-      <text>快速新建云函数</text>
-    </navigator>
-  </view>
-
-  <!-- 云调用 -->
-  <view class="uploader">
-    <navigator url="../openapi/openapi" open-type="navigate" class="uploader-text">
-      <text>云调用</text>
-    </navigator>
-  </view>
-
-  <view class="uploader">
-    <navigator url="../main/main" open-type="navigate" class="uploader-text">
-      <text>AI画家功能测试入口</text>
-    </navigator>
-  </view>
-
-</view>
+<scroll-view scroll-y="true" style="width: 100%; height: 100%">
+	<view bindtouchend="touchEnd" bindtouchstart="touchStart" class="container">
+	<button bindtap="hello">hello</button>
+  
+		<!-- <view class="one {{ view[0].in }} {{ view[0].out }}" style="width: 100%; height: 100%">
+			<image class="one-one {{ one_one }}" src="../../images/12.jpg"></image>
+			<image class="one-two {{ one_two }}" src="../../images/2.png"></image>
+			<view class="one-three {{ one_three }}">营销/新媒体/数字出版</view>
+			<view class="one-four {{ one_four }}">专业H5交互动画工具于服务平台</view>
+			<view class="one-five {{ one_five }}">2017-04-24 人马科技</view>
+		</view>
+		<view class="two {{ view[1].in }} {{ view[1].out }}" style="width: 100%; height: 100%">
+			<image class="two-one {{ two_one }}" src="../../images/7.png"></image>
+			<image class="two-two {{ two_two }}" src="../../images/14.png"></image>
+			<image class="two-three {{ two_three }}" src="../../images/3.png"></image>
+			<image class="two-four {{ two_four }}" src="../../images/20.png"></image>
+		</view> -->
+    <!-- 这里是公共部分 -->
+		<image class="bottom-top {{ bottom_top }}" src="../../images/5.png"></image>
+		<image class="bottom-one {{ bottom_one }}" src="../../images/1.png"></image>
+		<image class="bottom-one2 {{ bottom_one }}" src="../../images/1.png"></image>
+		<image class="bottom-two {{ bottom_two }}" src="../../images/11.png"></image>
+		<image class="bottom-two2 {{ bottom_two }}" src="../../images/11.png"></image>
+		<image class="bottom-three {{ bottom_three }}" src="../../images/12.png"></image>
+		<image class="bottom-three2 {{ bottom_three }}" src="../../images/12.png"></image>
+		<image class="bottom-four {{ bottom_four }}" src="../../images/10.png"></image>
+		<image class="bottom-four2 {{ bottom_four }}" src="../../images/10.png"></image>
+	</view>
+</scroll-view>
