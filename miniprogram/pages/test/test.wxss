@@ -1,0 +1,25 @@
+page{
+  overflow: hidden;
+  background: #F6F6F6;
+}
+.scroll-box{
+  white-space: nowrap;
+  height: 83vh;
+}
+
+.card-box{
+  display: inline-block;
+}
+
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 60vh;
+  width: 80vw;
+  margin: 2vh 10vw;
+  font-size: 40px;
+  background: #F8F2DC;
+  border-radius: 4px;
+}

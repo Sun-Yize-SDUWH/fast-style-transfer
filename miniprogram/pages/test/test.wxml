@@ -1,0 +1,28 @@
+<scroll-view class="scroll-box" scroll-x scroll-with-animation
+  scroll-into-view="{{toView}}"
+  bindtouchstart="touchStart"
+  bindtouchend="touchEnd">
+    <view wx:for="{{list}}"  class="card-box" id="card_{{index}}">
+      <view class="card">
+        <van-image
+          
+          width="19rem"
+          height="20rem"
+          fit="contain"
+          src="{{item.proUrl}}"
+        />
+        
+      </view>
+      <van-cell-group>
+          <van-cell title="风格名" value="{{item.name}}" size="large"/>
+          <van-collapse size="large" value="{{ activeNames }}" bind:change="onChange">
+            <van-collapse-item title="风格简介" name="1">
+              {{item.des}}
+            </van-collapse-item>
+          </van-collapse>
+      </van-cell-group>
+    </view>
+</scroll-view>
+
+<van-button round icon="add-o" type="primary" style="padding-bottom:20rpx;display: flex; align-items: center; justify-content: center;">上传照片</van-button>
+<van-button round icon="exchange" type="info" style="display: flex; align-items: center; justify-content: center;" >生成图片</van-button>
