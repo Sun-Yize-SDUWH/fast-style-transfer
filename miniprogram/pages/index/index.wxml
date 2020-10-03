@@ -27,3 +27,5 @@
 		<image class="bottom-four2 {{ bottom_four }}" src="../../images/10.png"></image>
 	</view>
 </scroll-view>
+
+<van-button type="default">默认按钮</van-button>

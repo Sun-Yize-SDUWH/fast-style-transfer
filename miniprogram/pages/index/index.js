@@ -169,7 +169,7 @@ Page({
   },
   hello:function(){
     wx.navigateTo({
-      url: '../openapi/openapi',
+      url: '../main/main',
     })
   },
   onUnload: function () {},
