@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/test1/test1",
-    "pages/share/share",
     "pages/main/main",
+    "pages/test1/test1",
+    
+    
+    "pages/share/share",
     "pages/index/index",
     "pages/test/test"
   ],
