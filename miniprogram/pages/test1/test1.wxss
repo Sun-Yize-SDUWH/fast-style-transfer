@@ -1,0 +1,45 @@
+/* pages/test1/test1.wxss */
+
+.upload {
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.chooseBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.valueChoose {
+  margin: 10rpx 20rpx 0rpx 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.valueChoose text {
+  flex: 1;
+}
+
+.valueChoose van-slider {
+  padding: 20rpx 25rpx 0 25rpx;
+  flex: 8;
+}
+
+.titleChoose {
+  margin: 20rpx 0 10rpx 20rpx;
+}
+
+.share {
+  display: flex;
+  margin-top: 10rpx;
+  justify-content: center;
+}
+
+.share text {
+  color: #1a0dab;
+  text-decoration: underline;
+}

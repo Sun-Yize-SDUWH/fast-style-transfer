@@ -1,7 +1,9 @@
 {
   "pages": [
+    "pages/test1/test1",
+    "pages/main/main",
     "pages/index/index",
-    "pages/main/main"
+    "pages/test/test"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -10,6 +12,11 @@
     "navigationBarTitleText": "AI画家",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "van-share-sheet": "@vant/weapp/share-sheet/index",
+    "van-slider": "@vant/weapp/slider/index"
+  },
+  "sitemapLocation": "sitemap.json"
 }
