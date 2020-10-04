@@ -32,22 +32,22 @@ Page({
   },
 
   onLoad: function (options) {
-    this.stretch(360)
-    this.shrink(340)
+    this.stretch(370)
+    this.shrink(350)
   },
   
   change(e){
     this.setData({
       current: e.detail.current
     })
-    this.stretch(360)
-    this.shrink(340)
+    this.stretch(370)
+    this.shrink(350)
   },
 
   // 收缩
   stretch(h){
     var animation = wx.createAnimation({
-      duration: 1000,
+      duration: 250,
       timingFunction: 'ease',
     })
     this.animation = animation
@@ -60,7 +60,7 @@ Page({
   // 展开
   shrink(h){
     var animation2 = wx.createAnimation({
-      duration: 1000,
+      duration: 250,
       timingFunction: 'ease',
     })
     this.animation2 = animation2

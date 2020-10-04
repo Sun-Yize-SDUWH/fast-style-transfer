@@ -6,9 +6,9 @@
         <swiper-item>
           <view class="box" data-index='{{index}}' animation="{{index == current?animationData:animationData2}}">
             <image src='{{item.proUrl}}'></image>
-            <view  class='content'> 
-              <text>{{item.name}}</text>
-              <text  style="color:#1989FA;text-decoration:underline;font-size:16px;" bindtap="goToDescription{{item.num}}">{{text}}</text>
+            <view  class="content{{index == current?'Max':'Min'}}"> 
+              <text >{{item.name}}</text>
+              <view wx:if="{{index == current}}" style="margin-bottom:5rpx;"><text  style="color:#1989FA;text-decoration:underline;font-size:16px;" bindtap="goToDescription{{item.num}}">{{text}}</text></view>
             </view>
             
           </view>
