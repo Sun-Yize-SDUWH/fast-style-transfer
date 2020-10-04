@@ -11,7 +11,7 @@
 
 
 <view class="circle">
-  <button class="clear" open-type="contact">
+  <button class="clear" bindtap="gotohistory">
     <view class="weui-item border-shadow background-1">
       <view class="weui-flex">
         <view class="weui-flex__item">
@@ -38,7 +38,7 @@
       </view>
     </view>
   </button>
-  <button class="clear" open-type="contact">
+  <button class="clear" bindtap="gotoours">
       <view class="weui-item border-shadow background-1">
         <view class="weui-flex">
           <view class="weui-flex__item">
