@@ -1,19 +1,12 @@
-<!--pages/history/history.wxml-->
-
-<!-- html -->
 <view class="cards" wx:for="{{list}}" wx:for-item="item" wx:key="item">
-	<view class="nav" url="">
-		<!-- 左侧图片 -->
+	<view class="nav">
 		<view class="card card-url">
 			<image src="{{item.imgsrc}}" mode="widthFix"></image>
 		</view>
-		<!-- 右侧文本区域 -->
 		<view class=" card card-text">
 			<view class="card-title">上传时间：{{item.time}}</view>
-			<view class="card-desc">图片风格：{{item.style}}</view>
-			<!-- 下方浏览等数据 -->
+			<view class="card-desc">图片风格：{{modellist[item.style]}}</view>
 		</view>
 	</view>
-	<!-- 卡片与卡片的空白间隔 -->
 	<view class="space"></view>
 </view>

@@ -2,7 +2,7 @@
   <view class="title-container">
     <text class="speName">神奈川冲浪里</text>
     <text class="fgName">葛饰北斋</text>
-    <image src="/images/wave_crop.jpg" mode="aspectFit"></image>
+    <image src="/images/style/wave_crop.jpg" mode="aspectFit"></image>
   </view>
   <view class="content">
     <text>色彩构成：白、蓝、黄</text>

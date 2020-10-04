@@ -10,13 +10,13 @@ Page({
   data: {
     text:'风格简介',
     list: [
-      {num:1,name:'拾穗者',proUrl:'/images/des_glaneuses.jpg', choose:false, generate:false},
-      {num:2,name:'画家与模特',proUrl:'/images/la_muse.jpg', choose:false, generate:false},
-      {num:3,name:'镜前的少女',proUrl: '/images/mirror.jpg', choose:false, generate:false},
-      {num:4,name:'星月夜',proUrl:'/images/starry_night.jpg',choose:false, generate:false}, 
-      {num:5,name:'Udnie',proUrl:'/images/udnie.jpg',choose:false, generate:false},
-      {num:6,name:'神奈川冲浪里',proUrl:'/images/wave_crop.jpg',choose:false, generate:false},
-      {num:7,name:'SDUWH',proUrl:'/images/sduwh.jpg',choose:false, generate:false}
+      {num:1,name:'拾穗者',proUrl:'/images/style/des_glaneuses.jpg', choose:false, generate:false},
+      {num:2,name:'画家与模特',proUrl:'/images/style/la_muse.jpg', choose:false, generate:false},
+      {num:3,name:'镜前的少女',proUrl: '/images/style/mirror.jpg', choose:false, generate:false},
+      {num:4,name:'星月夜',proUrl:'/images/style/starry_night.jpg',choose:false, generate:false}, 
+      {num:5,name:'Udnie',proUrl:'/images/style/udnie.jpg',choose:false, generate:false},
+      {num:6,name:'神奈川冲浪里',proUrl:'/images/style/wave_crop.jpg',choose:false, generate:false},
+      {num:7,name:'SDUWH',proUrl:'/images/style/sduwh.jpg',choose:false, generate:false}
     ],
     current: 0,
     animationData: {},
@@ -184,7 +184,7 @@ Page({
                 db.collection('history').add({
                   data: {
                     time: time,
-                    imgsrc: 'history/'+number+'.png',
+                    imgsrc: 'cloud://charlie-9mgmr.6368-charlie-9mgmr-1301103640/history/'+number+'.png',
                     style: numvalue,
                   }
                 })
