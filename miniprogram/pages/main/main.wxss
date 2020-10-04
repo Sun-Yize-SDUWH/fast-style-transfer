@@ -3,31 +3,44 @@
   height: 70vh;
   box-sizing: border-box;
 }
+
 swiper{
   height: 100%;
 }
-.content{
-  font-size: 20px;
-  color: #333;
-  padding: 40rpx 40rpx;
-}
+
 swiper-item{
   text-align: center;
 }
+
 swiper-item image{
   width: 100%;
 }
+
 .box{
   width: 90%;
   height:1200rpx;
   display: inline-block;
   margin-top: 40px;
   box-sizing: border-box;
-  box-shadow: 0 0 4px 4px #f2f2f2;
+  box-shadow: 0 0 5px 5px #D0D0CF;
   position:relative;
   top:33%;
   transform:translateY(-45%);
 }
+
+.content{
+  display: flex;
+  flex-direction: column;
+  font-size: 26px;
+  color: #333;
+  padding: 70rpx 40rpx 50rpx 40rpx;
+}
+
+/* .content1{
+  font-size: 20px;
+  color: #333;
+  padding: 0rpx 40rpx;
+} */
 
 .upload {
   display: flex;

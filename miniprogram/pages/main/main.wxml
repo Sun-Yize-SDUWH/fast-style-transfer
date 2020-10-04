@@ -2,14 +2,15 @@
 
 <view class='test'>
     <swiper display-multiple-items='1' circular previous-margin='50px' next-margin='50px' bindchange='change' current='{{current}}'>
-      <block wx:for="{{list}}" data-num ="{{item.num}}" >
+      <block wx:for="{{list}}" wx:key="id" data-num ="{{item.num}}" >
         <swiper-item>
           <view class="box" data-index='{{index}}' animation="{{index == current?animationData:animationData2}}">
             <image src='{{item.proUrl}}'></image>
-            <view class='content'>
+            <view  class='content'> 
               <text>{{item.name}}</text>
-              <text  style="color:#1989FA;text-decoration:underline;font-size:16px" bindtap="goToDescription{{item.num}}">{{text}}</text>
+              <text  style="color:#1989FA;text-decoration:underline;font-size:16px;" bindtap="goToDescription{{item.num}}">{{text}}</text>
             </view>
+            
           </view>
         </swiper-item>
       </block>
