@@ -1,4 +1,5 @@
 <view class="imgStyle">
-  <image src="/images/1.gif" mode="aspectFit"/>
+  <image src="/images/2.png" mode="aspectFit"/>
+  <text>孙易泽</text>
 </view>
 <van-button round disabled="{{changeStyle}}" type="primary" size="normal" bindtap="chooseimg" class="saveBtn">保存海报</van-button>

@@ -1,19 +1,22 @@
 import Notify from '../../@vant/weapp/notify/notify';
+var app = getApp();
+const db = wx.cloud.database()
+const _ = db.command
 
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    text:'\n\n风格简介',
+    text:'风格简介',
     list: [
-      {num:1,name:'拾穗者',proUrl:'../../images/des_glaneuses.jpg', choose:false, generate:false},
-      {num:2,name:'画家与模特',proUrl:'../../images/la_muse.jpg', choose:false, generate:false},
-      {num:3,name:'镜前的少女',proUrl: '../../images/mirror.jpg', choose:false, generate:false},
-      {num:4,name:'星月夜',proUrl:'../../images/starry_night.jpg',choose:false, generate:false}, 
-      {num:5,name:'Udnie',proUrl:'../../images/udnie.jpg',choose:false, generate:false},
-      {num:6,name:'神奈川冲浪里',proUrl:'../../images/wave_crop.jpg',choose:false, generate:false},
-      {num:7,name:'SDUWH',proUrl:'../../images/sduwh.jpg',choose:false, generate:false}
+      {num:1,name:'拾穗者',proUrl:'/images/des_glaneuses.jpg', choose:false, generate:false},
+      {num:2,name:'画家与模特',proUrl:'/images/la_muse.jpg', choose:false, generate:false},
+      {num:3,name:'镜前的少女',proUrl: '/images/mirror.jpg', choose:false, generate:false},
+      {num:4,name:'星月夜',proUrl:'/images/starry_night.jpg',choose:false, generate:false}, 
+      {num:5,name:'Udnie',proUrl:'/images/udnie.jpg',choose:false, generate:false},
+      {num:6,name:'神奈川冲浪里',proUrl:'/images/wave_crop.jpg',choose:false, generate:false},
+      {num:7,name:'SDUWH',proUrl:'/images/sduwh.jpg',choose:false, generate:false}
     ],
     current: 0,
     animationData: {},
@@ -30,23 +33,24 @@ Page({
     ],
     modellist: ['des_glaneuses', 'la_muse', 'mirror', 'starry_night', 'udnie', 'wave_crop', 'sduwh']
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
+
   onLoad: function (options) {
-    this.stretch(350)
+    this.stretch(370)
+    this.shrink(350)
   },
+  
   change(e){
     this.setData({
       current: e.detail.current
     })
-    this.stretch(350)
-    this.shrink(300)
+    this.stretch(370)
+    this.shrink(350)
   },
+
   // 收缩
   stretch(h){
     var animation = wx.createAnimation({
-      duration: 1000,
+      duration: 250,
       timingFunction: 'ease',
     })
     this.animation = animation
@@ -55,10 +59,11 @@ Page({
       animationData: animation.export(),
     })
   },
+
   // 展开
   shrink(h){
     var animation2 = wx.createAnimation({
-      duration: 1000,
+      duration: 250,
       timingFunction: 'ease',
     })
     this.animation2 = animation2
@@ -69,46 +74,43 @@ Page({
   },
 
   goToDescription1(){
-
     wx.navigateTo({
       url: '../introduce/pic1/pic1',
     })
   },
-  goToDescription2(){
 
+  goToDescription2(){
     wx.navigateTo({
       url: '../introduce/pic2/pic2',
     })
   },
-  goToDescription3(){
 
+  goToDescription3(){
     wx.navigateTo({
       url: '../introduce/pic3/pic3',
     })
   },
-  goToDescription4(){
 
+  goToDescription4(){
     wx.navigateTo({
       url: '../introduce/pic4/pic4',
     })
   },
-  goToDescription5(){
 
+  goToDescription5(){
     wx.navigateTo({
       url: '../introduce/pic5/pic5',
     })
   },
-  goToDescription6(){
 
+  goToDescription6(){
     wx.navigateTo({
       url: '../introduce/pic6/pic6',
     })
   },
+
   goToDescription7(){
 
-    wx.navigateTo({
-      url: '../pic7/pic7',
-    })
   },
 
   chooseimg: function() {
@@ -159,11 +161,34 @@ Page({
           if(res.statusCode==200){
             var temp1 = 'list[' + numvalue + '].proUrl'
             var temp2 = 'list[' + numvalue + '].generate'
-            wx.hideLoading()
             _this.setData({
               [temp1]: "data:image/png;base64," + res.data,
               [temp2]: true,
               changeStyle: false,
+            })
+
+            var number = Math.random();
+            var timestamp = Date.parse(new Date());
+            var date = new Date(timestamp);
+            var time = date.getFullYear() + '-' + (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-' + (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + "\t" + (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ":" + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes())
+
+            wx.getFileSystemManager().writeFile({
+              filePath: wx.env.USER_DATA_PATH + '/pic' + number + '.png',
+              data: _this.data.list[numvalue].proUrl.slice(22),
+              encoding: 'base64',
+            })
+            wx.cloud.uploadFile({
+              cloudPath: 'history/'+number+'.png',
+              filePath: wx.env.USER_DATA_PATH + '/pic' + number + '.png',
+              success: res => {
+                db.collection('history').add({
+                  data: {
+                    time: time,
+                    imgsrc: 'history/'+number+'.png',
+                    style: numvalue,
+                  }
+                })
+              },
             })
             wx.hideLoading(),
             Notify({
@@ -237,9 +262,22 @@ Page({
         })
       }
     }else if(res.detail.index==3){
-      wx.navigateTo({
-        url: '/pages/share/share',
-      })
+      if(_this.data.list[_this.data.current].generate==true){
+        var number = Math.random();
+        wx.getFileSystemManager().writeFile({
+          filePath: wx.env.USER_DATA_PATH + '/pic' + number + '.png',
+          data: _this.data.list[_this.data.current].proUrl.slice(22),
+          encoding: 'base64'
+        })
+        wx.navigateTo({
+          url: '/pages/share/share?imgsrc=' + wx.env.USER_DATA_PATH + '/pic' + number + '.png',
+        })
+      }else{
+        wx.showToast({
+          title: '保存失败，请先生成图片',
+          icon: 'none'
+        })
+      }
     }
     this.shareClose();
   },
@@ -248,6 +286,5 @@ Page({
     this.setData({
       showShare: false
     });
-  },
-
+  }
 })
