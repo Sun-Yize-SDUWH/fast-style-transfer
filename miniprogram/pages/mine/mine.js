@@ -13,16 +13,41 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    // var that = this
-    // //调用应用实例的方法获取全局数据
-    // app.getUserInfo( function( userInfo ) {
-    //   //更新数据
-    //   that.setData( {
-    //     userInfo: userInfo
-    //   })
-    // })
+  onLoad: function (e) {
+    console.log(e)
+    wx.cloud.callFunction({
+      name: 'index',
+      data: {
+      },
+      success: res => {
+        console.log("hello")
+        console.log(res)
+        console.log(res.result.openid)
+     
+        //需要openid
+       
+        this.setData({
+          userInfo: res.result.openid,
 
+        })
+        wx.setStorageSync('userInfo',res.result.openid)
+      }
+    })
+
+  },
+  gotoours:function(){
+    wx.navigateTo({
+      url: '../ours/ours',
+
+    })
+  },
+  gotohistory:function(){
+    let userInfo=this.data.userInfo
+    console.log(userInfo)
+    wx.navigateTo({
+      url: '../history/history?openid=userInfo',
+
+    })
   },
 
   /**

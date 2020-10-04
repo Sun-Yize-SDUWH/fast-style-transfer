@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    text:'风格简介',
+    text:'\n\n风格简介',
     list: [
       {num:1,name:'拾穗者',proUrl:'../../images/des_glaneuses.jpg', choose:false, generate:false},
       {num:2,name:'画家与模特',proUrl:'../../images/la_muse.jpg', choose:false, generate:false},
@@ -30,24 +30,23 @@ Page({
     ],
     modellist: ['des_glaneuses', 'la_muse', 'mirror', 'starry_night', 'udnie', 'wave_crop', 'sduwh']
   },
-
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
-    this.stretch(370)
-    this.shrink(350)
+    this.stretch(350)
   },
-  
   change(e){
     this.setData({
       current: e.detail.current
     })
-    this.stretch(370)
-    this.shrink(350)
+    this.stretch(350)
+    this.shrink(300)
   },
-
   // 收缩
   stretch(h){
     var animation = wx.createAnimation({
-      duration: 250,
+      duration: 1000,
       timingFunction: 'ease',
     })
     this.animation = animation
@@ -56,11 +55,10 @@ Page({
       animationData: animation.export(),
     })
   },
-
   // 展开
   shrink(h){
     var animation2 = wx.createAnimation({
-      duration: 250,
+      duration: 1000,
       timingFunction: 'ease',
     })
     this.animation2 = animation2
@@ -71,42 +69,43 @@ Page({
   },
 
   goToDescription1(){
+
     wx.navigateTo({
       url: '../introduce/pic1/pic1',
     })
   },
-
   goToDescription2(){
+
     wx.navigateTo({
       url: '../introduce/pic2/pic2',
     })
   },
-
   goToDescription3(){
+
     wx.navigateTo({
       url: '../introduce/pic3/pic3',
     })
   },
-
   goToDescription4(){
+
     wx.navigateTo({
       url: '../introduce/pic4/pic4',
     })
   },
-
   goToDescription5(){
+
     wx.navigateTo({
       url: '../introduce/pic5/pic5',
     })
   },
-
   goToDescription6(){
+
     wx.navigateTo({
       url: '../introduce/pic6/pic6',
     })
   },
-
   goToDescription7(){
+
     wx.navigateTo({
       url: '../pic7/pic7',
     })
@@ -249,5 +248,6 @@ Page({
     this.setData({
       showShare: false
     });
-  }
+  },
+
 })

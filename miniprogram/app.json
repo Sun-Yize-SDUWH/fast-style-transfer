@@ -5,6 +5,7 @@
     "pages/share/share",
     "pages/mine/mine", 
     "pages/ours/ours",
+    "pages/history/history",
     "pages/introduce/introduce", 
     "pages/introduce/pic1/pic1", 
     "pages/introduce/pic2/pic2", 
