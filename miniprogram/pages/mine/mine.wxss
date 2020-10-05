@@ -176,12 +176,11 @@
 }
 
 .clear {
+  width:80%;
   position: inherit;
   display: inherit;
-  margin-left: inherit;
-  margin-right: inherit;
-  padding-left: 0;
-  padding-right: 0;
+  margin-left:auto;
+  margin-right:auto;
   box-sizing: inherit;
   font-size: inherit;
   text-align: inherit;
