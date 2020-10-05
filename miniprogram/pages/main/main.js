@@ -270,7 +270,7 @@ Page({
           encoding: 'base64'
         })
         wx.navigateTo({
-          url: '/pages/share/share?imgsrc=' + wx.env.USER_DATA_PATH + '/pic' + number + '.png',
+          url: '/pages/share/share?imgsrc=' + wx.env.USER_DATA_PATH + '/pic' + number + '.png'+'&style='+_this.data.current,
         })
       }else{
         wx.showToast({

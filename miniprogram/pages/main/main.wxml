@@ -48,7 +48,3 @@
   bind:select="shareSelect"
   bind:close="shareClose"
 />
-
-
-<!-- <van-button round icon="add-o" type="primary" style="padding-bottom:20rpx;display: flex; align-items: center; justify-content: center;">上传照片</van-button>
-<van-button round icon="exchange" type="info" style="display: flex; align-items: center; justify-content: center;" >生成图片</van-button> -->
