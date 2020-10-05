@@ -1,13 +1,18 @@
 /* pages/share/share.wxss */
 
 page {
-  background-color: #242728;
+  /* background-color: #242728; */
 }
 
 .imgStyle {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.imgStyle text{
+  margin-top: -90rpx;
 }
 
 .saveBtn {

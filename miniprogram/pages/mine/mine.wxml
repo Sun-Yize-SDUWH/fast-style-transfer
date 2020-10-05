@@ -1,17 +1,13 @@
-<view class="weui-cells weui-cells_after-title">
-  <view class="weui-cell">
-    <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-      <image src="{{userInfo.avatarUrl}}" style="width: 50px; height: 50px; display: block"/>   
-    </view>
-    <view class="weui-cell__bd">
-      <view>{{userInfo.nickName}}</view>
-    </view>
+<view class="userinfo">
+  <view class="userinfo-avatar">
+    <open-data  type="userAvatarUrl"></open-data>
   </view>
 </view>
 
 
 <view class="circle">
-  <button class="clear" open-type="contact">
+	<van-row style="margin-top:100rpx;">
+  <button class="clear" bindtap="gotohistory">
     <view class="weui-item border-shadow background-1">
       <view class="weui-flex">
         <view class="weui-flex__item">
@@ -23,8 +19,10 @@
       </view>
     </view>
   </button>
+ </van-row>
+ <van-row style="margin-top:150px;">
   <button class="clear" open-type="contact">
-  
+ 
     <view class="weui-item border-shadow background-2">
       <view class="weui-flex">
         <view class="weui-flex__item">
@@ -38,7 +36,9 @@
       </view>
     </view>
   </button>
-  <button class="clear" open-type="contact">
+  </van-row>
+  <van-row style="margin-top:150px;">
+  <button class="clear" bindtap="gotoours">
       <view class="weui-item border-shadow background-1">
         <view class="weui-flex">
           <view class="weui-flex__item">
@@ -50,4 +50,5 @@
         </view>
       </view>
   </button>
+  </van-row>
 </view>

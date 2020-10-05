@@ -54,16 +54,6 @@ Page({
     }, 340)
   },
 
-  onHide: function () {
-    // this.cleanAnimated(), this.setData({
-    //   bottom: "",
-    //   bottom_one: "",
-    //   bottom_two: "",
-    //   bottom_three: "",
-    //   bottom_four: ""
-    // })
-  },
-
   touchStart: function (t) {
     this.setData({
       startX: t.changedTouches[0].clientX
