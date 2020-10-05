@@ -24,7 +24,7 @@
 			<van-col class="text1">—— 联系我们 ——</van-col>
 		</van-row>
 		<van-row style="margin-top:50rpx;">
-			<van-col class="text2" bindtap="navigate1">山东大学（威海）</van-col>
+			<van-col class="text2" bindtap="navigate1">chengliang_zhao@mail.sdu.edu.cn</van-col>
 		</van-row>
 	</view>
 </scroll-view>
